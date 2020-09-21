@@ -8,7 +8,7 @@ import { Satellite } from './satellite';
 export class AppComponent {
   title = 'orbit-report';
   sourceList: Satellite[];
-  displayList: Satellite[]
+  displayList: Satellite[];
   constructor() {
     this.sourceList = [];
     this.displayList = [];
@@ -21,6 +21,7 @@ export class AppComponent {
           for(let i=0; i<satellitesUrl.length;i++) {
             let satellite=new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
               this.sourceList.push(satellite);
+             
             }
         this.displayList=this.sourceList.slice(0);
        }.bind(this));
@@ -28,6 +29,7 @@ export class AppComponent {
  
     
  }
+ ngOnInit(): void { };
  search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
