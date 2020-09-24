@@ -5,5 +5,8 @@ Search: <input #searchTerm type="text" (keyup.enter)="search(searchTerm.value);"
 <button (click)="search(searchTerm.value);"> search </button>
 </div> 
 
+<app-orbit-list [satellites]="displayList"></app-orbit-list>
+Search: <input #searchTerm type="text" (keyup.enter)="search(searchTerm.value);" name="searchTerm"/>
+
 
 
